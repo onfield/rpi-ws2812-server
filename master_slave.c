@@ -236,7 +236,7 @@ void slave_listen(thread_context * context, char * args){
 		}				
 		close(slave_server_socket);
 	}else{
-		fprintf(stderr, ERROR_INVALID_CHANNEL);
+		fprintf(stderr, ERROR_INVALID_CHANNEL ", channel=%d in %s\n", channel, __FUNCTION__);
 	}
 
 }

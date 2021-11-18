@@ -28,7 +28,7 @@
 #define MODE_TCP 3
 
 #define ERROR_INVALID_CHANNEL "Invalid channel number, did you call setup and init?\n"
-#define ERROR_INVALID_2D_CHANNEL "Invalid channel number, did you call setup and init?\n"
+#define ERROR_INVALID_2D_CHANNEL "Invalid 2D channel number, did you call setup and init?\n"
 
 #define CHANNEL_TYPE_NONE 0
 #define CHANNEL_TYPE_WS2811 1

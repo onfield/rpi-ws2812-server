@@ -998,7 +998,7 @@ void config_2D(thread_context* context, char* args) {
 		//cairo_set_antialias(led_channel->cr, CAIRO_ANTIALIAS_NONE);
 
 	}else {
-		fprintf(stderr, ERROR_INVALID_CHANNEL);
+		fprintf(stderr, ERROR_INVALID_CHANNEL ", channel=%d in %s\n", channel, __FUNCTION__);
 	}
 }
 
@@ -1223,6 +1223,7 @@ void setup_ledstring(thread_context * context, char * args){
 				led_channels[channel].virtual_channel->remote_address[0] = 0;
 				led_channels[channel].virtual_channel->packet_nr=0;
 				led_channels[channel].virtual_channel->packet_data=NULL;
+				led_channels[channel].virtual_channel->parent_channel_index = parent_channel_index;
 				led_channels[channel].led_count = max_led_count;
 				led_channels[channel].color_size = led_channels[parent_channel_index].color_size;
 			} else {
@@ -1290,7 +1291,7 @@ void global_brightness(thread_context* context, char* args) {
 		if (debug) printf("Global brightness %d, %d\n", channel, brightness);
 	}
 	else {
-		fprintf(stderr, ERROR_INVALID_CHANNEL);
+		fprintf(stderr, ERROR_INVALID_CHANNEL ", channel=%d in %s\n", channel, __FUNCTION__);
 	}
 }
 
@@ -1384,7 +1385,7 @@ void render(thread_context * context, char * args){
 	if (is_valid_channel_number(channel)){
 		render_channel(channel);
 	}else{
-		fprintf(stderr,ERROR_INVALID_CHANNEL);
+		fprintf(stderr,ERROR_INVALID_CHANNEL ", channel=%d in %s\n", channel, __FUNCTION__);
 	}
 }
 

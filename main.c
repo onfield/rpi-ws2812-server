@@ -96,6 +96,14 @@ void tcp_wait_connection (){
 		if (setsockopt(active_socket, SOL_SOCKET, SO_KEEPALIVE, &sock_opt, optlen)){
 			perror("Error set SO_KEEPALIVE\n");
 		}
+
+		struct linger sl;
+		sl.l_onoff = 1;
+		sl.l_linger = 0;
+		if (setsockopt(active_socket, SOL_SOCKET, SO_LINGER, &sl, sizeof(sl))){
+			perror("Error set SO_LINGER\n");
+		}
+
 		printf("Client connected.\n");
 	}else{
 		perror("Socket accept error");

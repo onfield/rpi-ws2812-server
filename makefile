@@ -6,7 +6,7 @@ all: ws2812svr
 
 INCL=-I/usr/include -I/usr/include/arm-linux-gnueabihf `pkg-config --cflags cairo x11 xcb freetype2 alsa`
 LINK=-I/usr/lib -I/usr/local/lib -I/usr/lib/arm-linux-gnueabihf -pthread -lm -lpng -ljpeg `pkg-config --libs cairo x11 xcb freetype2 alsa`
-CC=gcc -g $(INCL)
+CC=gcc -g $(INCL) -DENABLE_2D=1
 
 ifneq (1,$(DEBUG))
   CC += -O3
