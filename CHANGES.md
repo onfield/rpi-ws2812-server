@@ -1,3 +1,17 @@
+
+# Version 7.0
+* render command will now render ALL channels if no channel argument is used or 0 as channel number is used (for backwards compatibility)
+
+# Version 6.9
+* Add new command wait_ready_signal.
+
+# Version 6.8
+* make read_png function work with multiple threads at same time
+* all brightness arguments now expect number 0-255
+
+# Version 6.7
+* Fix bug with SPI rendering for SK9822
+
 # Version 6.5
 * Add function to render video from camera directly on a 2D panel
 * Add function to generate ambilight effect from camera/HDMI capture input
